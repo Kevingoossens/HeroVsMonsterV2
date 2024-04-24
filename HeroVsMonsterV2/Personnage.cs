@@ -48,7 +48,7 @@ namespace HeroesVsMonsterV2
             private set { _For = value; }
         }
 
-        private int PV
+        public virtual int PV
         {
             get { return _PV; }
             set

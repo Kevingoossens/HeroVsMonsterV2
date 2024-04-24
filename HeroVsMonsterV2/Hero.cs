@@ -5,11 +5,11 @@ namespace HeroesVsMonsterV2
     public abstract class Hero : Personnage, Or, Cuir
     {
         //God Mode
-        //public override int End
-        //{
-        //    get { return base.End + 150; }
+       /*  public override int End
+        {
+           get { return base.End + 150; }
 
-        //}
+        } */
 
         private int _Or, _Cuir;
 

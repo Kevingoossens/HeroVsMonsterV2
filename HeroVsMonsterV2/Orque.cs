@@ -27,7 +27,7 @@ namespace HeroesVsMonsterV2
 
         public override string Icon
         {
-            get { return "O"; }
+            get { return "0"; }
         }
     }
 }
