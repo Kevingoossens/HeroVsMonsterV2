@@ -66,7 +66,7 @@ namespace HeroesVsMonsterV2
             else
             {
                 Console.WriteLine("Le monstre est mort");
-                Console.WriteLine("Press any key to continue...");
+                Console.WriteLine("Appuiez sur une touche pour continuer...");
                 Console.ReadKey();
 
                 _NbrDeCombatGagne++;
@@ -189,9 +189,7 @@ namespace HeroesVsMonsterV2
                 //}
             }
 
-#pragma warning disable CS8603 // Existence possible d'un retour de référence null.
             return M;
-#pragma warning restore CS8603 // Existence possible d'un retour de référence null.
         }
 
         private Monster GetNextMonster()
@@ -213,9 +211,7 @@ namespace HeroesVsMonsterV2
                     break;
             }
 
-#pragma warning disable CS8602 // Déréférencement d'une éventuelle référence null.
             M.Meurt += UnPersonnageEstMort;
-#pragma warning restore CS8602 // Déréférencement d'une éventuelle référence null.
             return M;
         }
 
