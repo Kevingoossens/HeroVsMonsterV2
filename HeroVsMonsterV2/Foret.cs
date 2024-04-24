@@ -139,7 +139,7 @@ namespace HeroesVsMonsterV2
                 {
                     Console.Clear();
                     Console.WriteLine("Stats du Héro");
-                    Console.WriteLine("Pointdde vie - {0} : {1}", Hero.GetType().Name, Hero.PV);
+                    Console.WriteLine("Point de vie - {0} : {1}", Hero.GetType().Name, Hero.PV);
                     Console.WriteLine("Force - {0} : {1}", Hero.GetType().Name, Hero.For);
                     Console.WriteLine("Endurance du - {0}: {1}", Hero.GetType().Name, Hero.End);
                     Console.WriteLine();
