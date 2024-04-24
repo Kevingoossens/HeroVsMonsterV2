@@ -60,17 +60,23 @@ namespace HeroesVsMonsterV2
                 FinDePartie = true;
 
                 Console.WriteLine();
-                Console.WriteLine("Le Héro est mort");
+                Console.WriteLine("Le Héro est mort.");
                 AfficherStats();
                 Console.WriteLine();
-                Console.WriteLine("Fin de partie, vous avez bien combattu, Héros !");
-                Console.WriteLine("Appuiez sur la 'Enter' pour relancer une partie");
+                Console.WriteLine("Fin de partie, vous avez bien combattu, Héro !");
+                Console.WriteLine();
+                Console.WriteLine("Appuiez sur la touche 'Enter' pour relancer une partie.");
 
             }
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Le monstre est mort");
+                Console.WriteLine("Le monstre est mort.");
+                Console.WriteLine();
+                Console.WriteLine("Le {0} récupère pour le prochain affrontement.", Hero.GetType().Name);
+                Console.WriteLine();
+                AfficherStatsInBattle(); 
+                Console.WriteLine();
                 Console.WriteLine("Appuiez sur une touche pour continuer...");
                 Console.ReadKey();
 
@@ -82,8 +88,12 @@ namespace HeroesVsMonsterV2
                 if (_Personnages.Count == 1)
                 {
                     FinDePartie = true;
-                    Console.WriteLine("Il n'y a plus de monstres");
+                    Console.WriteLine();
+                    Console.WriteLine("Il n'y a plus de monstres.");
+                    Console.WriteLine();
                     AfficherStats();
+                    Console.WriteLine();
+                    Console.WriteLine("Appuiez sur la touche 'Enter' pour relancer une partie.");
                 }
                 else
                 {
@@ -94,16 +104,22 @@ namespace HeroesVsMonsterV2
 
         private void AfficherStats()
         {
-            Console.WriteLine("Le héro a gagné {0} combat(s)", _NbrDeCombatGagne);
-            Console.WriteLine("Le héro a accumulé {0} pièce(s) d'or", Hero.Or);
-            Console.WriteLine("Le héro a accumulé {0} cuir(s)", Hero.Cuir);
+            Console.WriteLine("Le {0} a gagné {1} combat(s)", Hero.GetType().Name, _NbrDeCombatGagne);
+            Console.WriteLine("Le {0} a accumulé {1} combat(s)", Hero.GetType().Name, Hero.Or);
+            Console.WriteLine("Le {0} a accumulé {1} combat(s)", Hero.GetType().Name, Hero.Cuir);
+        }
+
+        private void AfficherStatsInBattle() 
+        {
+            Console.WriteLine("Le {0} a accumulé {1} combat(s)", Hero.GetType().Name, Hero.Or);
+            Console.WriteLine("Le {0} a accumulé {1} combat(s)", Hero.GetType().Name, Hero.Cuir);
         }
 
         public void Lance()
         {
             Console.WriteLine("Vous pénétrez la forêt de Shorewood !");
             Console.SetCursorPosition(0, Size + 2);
-            Console.WriteLine("Utilisez les flèches pour déplacer le héro...");
+            Console.WriteLine("Utilisez les flèches pour déplacer le Héro...");
             
             bool IsPlayerTurn = true;
 
@@ -138,16 +154,18 @@ namespace HeroesVsMonsterV2
                 if (M != null)
                 {
                     Console.Clear();
-                    Console.WriteLine("Stats du Héro");
-                    Console.WriteLine("Point de vie - {0} : {1}", Hero.GetType().Name, Hero.PV);
+                    Console.WriteLine("Stats - {0} :", Hero.GetType().Name);
+                    Console.WriteLine("Points de vie - {0} : {1}", Hero.GetType().Name, Hero.PV);
                     Console.WriteLine("Force - {0} : {1}", Hero.GetType().Name, Hero.For);
-                    Console.WriteLine("Endurance du - {0}: {1}", Hero.GetType().Name, Hero.End);
+                    Console.WriteLine("Endurance - {0}: {1}", Hero.GetType().Name, Hero.End);
                     Console.WriteLine();
-                    Console.WriteLine("Vous rencontrez un {0} le combat commence !", M.GetType().Name);
+                    Console.WriteLine("Vous rencontrez un {0}, le combat commence !", M.GetType().Name);
                     Console.WriteLine();
-                    Console.WriteLine("Point de vie - {0} : {1}", M.GetType().Name, M.PV);
+                    Console.WriteLine("Stats - {0} :", M.GetType().Name);
+                    Console.WriteLine("Points de vie - {0} : {1}", M.GetType().Name, M.PV);
                     Console.WriteLine("Force - {0} : {1}", M.GetType().Name, M.For);
                     Console.WriteLine("Endurance - {0}: {1}", M.GetType().Name, M.End);
+                    Console.WriteLine();
 
                     _FightEnd = false;
                     while (!_FightEnd)
