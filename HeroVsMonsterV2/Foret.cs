@@ -170,7 +170,7 @@ namespace HeroesVsMonsterV2
 
         private Monster GetNearestMonster()
         {
-            Monster M = null;
+            Monster? M = null;
 
             foreach (Personnage p in _Personnages)
             {
@@ -189,12 +189,14 @@ namespace HeroesVsMonsterV2
                 //}
             }
 
+#pragma warning disable CS8603 // Existence possible d'un retour de référence null.
             return M;
+#pragma warning restore CS8603 // Existence possible d'un retour de référence null.
         }
 
         private Monster GetNextMonster()
         {
-            Monster M = null;
+            Monster? M = null;
 
             Coordonee C = GetNewValidCoordonate(3);
 
@@ -211,7 +213,9 @@ namespace HeroesVsMonsterV2
                     break;
             }
 
+#pragma warning disable CS8602 // Déréférencement d'une éventuelle référence null.
             M.Meurt += UnPersonnageEstMort;
+#pragma warning restore CS8602 // Déréférencement d'une éventuelle référence null.
             return M;
         }
 
