@@ -60,7 +60,7 @@ namespace HeroesVsMonsterV2
                 FinDePartie = true;
 
                 Console.WriteLine();
-                Console.WriteLine("Le Héro est mort.");
+                Console.WriteLine("Le {0} est mort.", Hero.GetType().Name);
                 AfficherStats();
                 Console.WriteLine();
                 Console.WriteLine("Fin de partie, vous avez bien combattu, Héro !");
@@ -92,6 +92,9 @@ namespace HeroesVsMonsterV2
                     Console.WriteLine("Il n'y a plus de monstres.");
                     Console.WriteLine();
                     AfficherStats();
+                    Console.WriteLine();
+                    Console.WriteLine("Félicitations, Héros ! Tu as vaincu tous les monstres de la forêt de Shorewood, lui rendant ainsi sa tranquillité,");
+                    Console.WriteLine("le récit de ta quête restera a jamais dans l'histoire du pays de Stormwall !");
                     Console.WriteLine();
                     Console.WriteLine("Appuiez sur la touche 'Enter' pour relancer une partie.");
                 }
