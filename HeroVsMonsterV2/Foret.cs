@@ -73,9 +73,9 @@ namespace HeroesVsMonsterV2
                 Console.WriteLine();
                 Console.WriteLine("Le monstre est mort.");
                 Console.WriteLine();
-                Console.WriteLine("Le {0} récupère pour le prochain affrontement.", Hero.GetType().Name);
-                Console.WriteLine();
                 AfficherStatsInBattle(); 
+                Console.WriteLine();
+                Console.WriteLine("Le {0} récupère pour le prochain affrontement.", Hero.GetType().Name);
                 Console.WriteLine();
                 Console.WriteLine("Appuiez sur une touche pour continuer...");
                 Console.ReadKey();
@@ -105,14 +105,14 @@ namespace HeroesVsMonsterV2
         private void AfficherStats()
         {
             Console.WriteLine("Le {0} a gagné {1} combat(s)", Hero.GetType().Name, _NbrDeCombatGagne);
-            Console.WriteLine("Le {0} a accumulé {1} combat(s)", Hero.GetType().Name, Hero.Or);
-            Console.WriteLine("Le {0} a accumulé {1} combat(s)", Hero.GetType().Name, Hero.Cuir);
+            Console.WriteLine("Le {0} a accumulé {1} Or(s)", Hero.GetType().Name, Hero.Or);
+            Console.WriteLine("Le {0} a accumulé {1} Cuir(s)", Hero.GetType().Name, Hero.Cuir);
         }
 
         private void AfficherStatsInBattle() 
         {
-            Console.WriteLine("Le {0} a accumulé {1} combat(s)", Hero.GetType().Name, Hero.Or);
-            Console.WriteLine("Le {0} a accumulé {1} combat(s)", Hero.GetType().Name, Hero.Cuir);
+            Console.WriteLine("Le {0} a accumulé {1} Or(s)", Hero.GetType().Name, Hero.Or);
+            Console.WriteLine("Le {0} a accumulé {1} Cuir(s)", Hero.GetType().Name, Hero.Cuir);
         }
 
         public void Lance()
